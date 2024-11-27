@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEEK dayS</title>
+</head>
+<style>
+
+</style>
+<script>
+    function getWeekdays(day) {
+        let output;
+        switch(day){
+            case 1: output ="Monday";
+            break;
+            case 2: output = "Tuesday";
+            break;
+            case 3: output="Wednesday";
+            break;
+            case 4: output="Thursday";
+            break;
+            case 5: output="Friday";
+            break;
+            case 6: output="Saturday";
+            break;
+            case 7: output="Sunday";
+            break;
+            default: output ="Invalid day";
+        }
+        document.getElementById("day-name").innerHTML=output;
+    }
+</script>
+<body>
+    <div>
+        <h1>Week days</h1>
+        <p id="day-name"></p>
+        <!-- <input type="text" id="day-name" placeholder="Enter day number"> -->
+        <button  onclick="getWeekdays(1)">Monday</button>
+        <button  onclick="getWeekdays(2)">Tuesday</button>
+        <button  onclick="getWeekdays(3)">Wednesday</button>
+        <button  onclick="getWeekdays(4)">Thursday</button>
+        <button  onclick="getWeekdays(5)">Friday</button>
+        <button onclick="getWeekdays(6)">Saturday</button>
+        <button  onclick="getWeekdays(7)">Sunday</button>
+    </div>
+</body>
+</html>

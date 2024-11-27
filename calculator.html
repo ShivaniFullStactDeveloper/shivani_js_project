@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: aquamarine;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .container {
+        width: 80%;
+        height: 80vh;
+        margin: 0 auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: cornflowerblue;
+      }
+
+      .firstbox {
+        width: 80%;
+        height: 30%;
+        margin-left: 10%;
+        padding: 10px;
+        background-color: grey;
+        color: white;
+        font-size: 30px;
+      }
+
+      .secondbox {
+        width: 20%;
+        height: 20%;
+        margin: 30px;
+        background-color: green;
+      }
+
+      .thirdbox {
+        height: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    </style>
+    <script>
+      // FUNCTION DECLARATION ONE
+      function myFunction(x) {
+        //    alert("hello");
+        document.getElementById("display").innerHTML = "HELLO JS";
+      }
+
+      // FUNCTION DECLARATION TW
+      function funWithParameter(x, y) {
+        document.getElementById("display").innerHTML = x + y;
+      }
+
+      // FUNCTION DECLARATION THREE
+      function funCallAnotherFunction() {
+        myFunction();
+      }
+
+      // FUNCTION DECLARATION FOUR
+      function funReturnValue() {
+        result = functionReturn();
+        document.getElementById("display").innerHTML = result;
+      }
+
+      function functionReturn() {
+        x = 2;
+        y = 3;
+        return x + y;
+      }
+
+      // FUNCTION DECLARATION FIVE
+      function functionRecursion() {
+        functionOne();
+    }
+
+      function functionOne(a) {
+        alert("say hello");
+        functionOne();
+      }
+    </script>
+  </head>
+
+ 0 <body>
+    <div class="container">
+      <div class="firstbox" id="display"></div>
+      <div class="thirdbox">
+        <button class="secondbox" onclick="myFunction()">ONE</button>
+        <button class="secondbox" onclick="funWithParameter(10,20)">TWO</button>
+        <button class="secondbox" onclick="funCallAnotherFunction()"> THREE </button>
+        <button class="secondbox" onclick="funReturnValue()">FOUR</button>
+        <button class="secondbox" onclick="functionRecursion()">FIVE</button>
+      </div>
+    </div>
+  </body>
+</html>

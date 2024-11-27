@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- style -->
+    <style>
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: center;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        input {
+            background: rgb(243, 241, 241);
+            width: 20%;
+            height: 30px;
+        }
+
+        button {
+            background-color: green;
+        }
+        h1{
+            text-align: center;
+            
+        }
+    </style>
+    <script>
+        // program one
+        function myFunction() {
+            let age = document.getElementById("voter").value;
+            // processing
+            let y = age >= 18 ? alert("Eligible For Vote") : alert("Not Eligible For Vote");
+        }
+
+        // // program two
+        // function greatestFunction() {
+        //     let a = Number(document.getElementById("num-one").value);
+        //     let b = Number(document.getElementById("num-two").value);
+        //     let c = Number(document.getElementById("num-three").value);
+        //     // processing
+        //     let max = a >= b && a >= c ? alert(a + "is greater") :
+        //         b >= c && b >= a ? alert(b + "is greater") :
+        //             alert(c + "is greater");
+        // }
+
+        function findNumbers() {
+            let a = Number(document.getElementById("num-one").value);
+            let b = Number(document.getElementById("num-two").value);
+            let c = Number(document.getElementById("num-three").value);
+    // Finding the greatest number
+    let greatest = a > b ? (a > c ? a : c) : (b > c ? b : c);
+
+    // Finding the smallest number
+    let smallest = a < b ? (a < c ? a : c) : (b < c ? b : c); 
+
+    // Finding the middle number
+    let middle = a + b + c - greatest - smallest;
+    // equal
+    let equal
+    if(a == b ){
+        equal= "A and B is equal" ;
+        }else if(a == c || b == c){
+           equal=  "A and C is equal" ;
+        }else{
+            equal= "B and C is equal" ;
+        }
+    
+
+    alert("Smallest number:"+ smallest + "\nGreatest number: " + greatest + "\nMiddle number: " + middle 
+        + "\n" + equal);
+
+
+}
+        // program three even or odd
+        function evenOdd() {
+            x = document.getElementById("num").value;
+            // processing using ternary operator  
+            let y = x % 2 == 0 ? alert("No Is Even") : alert("No Is Odd");
+        }
+
+        // program four
+        function classifyTriangle() {
+            let a = Number(document.getElementById("one").value);
+            let b = Number(document.getElementById("two").value);
+            let c = Number(document.getElementById("three").value);
+            // processing
+            let z = a == b && b == c ? "Equilateral Triangle" :
+                a == b || b == c || a == c ? "Isosceles Triangle" :
+                    "Scalene Triangle";
+            alert(z);
+
+
+        }
+
+        // program five
+        function timeCheck() {
+            let t = Number(document.getElementById("display").value);
+            // processing
+            let y = t < 12.00 ? alert(" Morning") :
+                t < 18 ? alert(" Afternoon") : alert("Evening");
+        }
+
+    </script>
+
+</head>
+
+<body>
+    
+        <h1>Voter</h1>
+        <div>
+        <!-- voter -->
+        <input type="number" id="voter" placeholder="Enter your age">
+        <button onclick="myFunction()">Check</button>
+
+    </div>
+    <!-- second -->
+ 
+    <h1>Find greatest No</h1>
+    <div>
+    <!-- greatest of three numbers -->
+    <input type="number" id="num-one" placeholder="Enter no">
+    <input type="number" id="num-two" placeholder="Enter no">
+    <input type="number" id="num-three" placeholder="Enter no">
+    <button onclick="findNumbers()">Check</button>
+
+    </div>
+    <!-- third even or odd -->
+    
+        <h1>Even or Odd</h1>
+        <div>
+        <!-- even odd -->
+        <input type="number" id="num" placeholder="Enter no">
+        <button onclick="evenOdd()">Check</button>
+
+    </div>
+    <!-- four -->
+        <h1>Triangle</h1>
+        <div>
+        <!-- greatest of three numbers -->
+        <input type="number" id="one" placeholder="Enter no">
+        <input type="number" id="two" placeholder="Enter no">
+        <input type="number" id="three" placeholder="Enter no">
+        <button onclick="classifyTriangle()">Check</button>
+
+    </div>
+    <!-- five -->
+    
+          <h1>Time</h1>
+          <div>
+        <input type="number" id="display" placeholder="Enter time">
+        <button onclick="timeCheck()">Check</button>
+
+    </div>
+
+</body>
+
+</html>

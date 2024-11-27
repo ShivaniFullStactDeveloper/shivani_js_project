@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgb(150, 146, 146);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 50%;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #313030;
+}
+
+input, select, button {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    font-size: 20px;
+    margin-top: 20px;
+
+}
+
+
+    </style>
+    <script>
+        // FUNCTION DECLARATION ONE
+        function ageFunctin() {
+            let age = document.getElementById("display-age").value;
+            let gender = document.getElementById("display-gender").value;
+            //  condition
+            if (age >= 18 && age <= 30) {
+                if (gender === "male") {
+                    document.getElementById("result").innerHTML = "Hello Brother";
+                } else if (gender === "female") {
+                    document.getElementById("result").innerHTML = "Hello Sister";
+                } else {
+                    document.getElementById("result").innerHTML = "Hello Friend";
+            }
+         } if (age >= 31 && age <= 60) {
+                if (gender === "male") {
+                    document.getElementById("result").innerHTML = "Hello Uncle";
+                } else if(gender === "female"){
+                    document.getElementById("result").innerHTML = "Hello Aunty";
+                }else{
+                    document.getElementById("result").innerHTML = "Hello there";
+                }
+            } else if (age >= 61 && age <= 100) {
+                if (gender === "male") {
+                    document.getElementById("result").innerHTML = "Hello Grandpa";
+                } else if(gender === "female") {
+                    document.getElementById("result").innerHTML = "Hello Grandma";
+                }else{
+                    document.getElementById("result").innerHTML = "Hello there";
+                }
+            }else if(age >101){
+                document.getElementById("result").innerHTML = "Rest In Peace";
+            } 
+
+            result.style.color = "green";
+        };
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Age and Gender Checker</h1>
+        <form>
+            <!-- age -->
+            <label for="age">Enter your age:</label>
+            <input type="number" id="display-age" placeholder="Enter your age" required>
+<!-- gender -->
+            <label for="gender">Select your gender:</label>
+            <select id="display-gender" required>
+                <option value="" disabled selected>Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+<!-- button -->
+            <button type="button" id="submitBtn" onclick="ageFunctin()">Check</button>
+        </form>
+        <!-- display -->
+        <p id="result"></p>
+    </div>
+
+</body>
+
+
+
+</html>
