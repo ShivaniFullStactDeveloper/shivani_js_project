@@ -98,13 +98,13 @@ button:hover {
 
 // LOCAL STORAGE
 function storeCounter(value){
-    localStorage.setItem("counter", value);
+    sessionStorage.setItem("counter", value);
 }
 
 // get counter function
 function getCounter(){
-    return localStorage.getItem("counter")?
-    localStorage.getItem("counter") : 0;
+    return sessionStorage.getItem("counter")?
+    sessionStorage.getItem("counter") : 0;
 }
 
 // login function
@@ -123,11 +123,12 @@ function loginFunction(){
     } else{
         if(user == "admin"  && pass == "technology"){
         alert("Login Successfull");
+        window.location.href = "dashboard.html";
 }else{
     alert("Invalid Username or Password Please try again");
 }
 storeCounter++;
-storeCounter = localStorage.setItem("counter", storeCounter);
+storeCounter = sessionStorage.setItem("counter", storeCounter);
 
 
 }} 
