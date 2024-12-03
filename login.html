@@ -98,17 +98,18 @@ button:hover {
 
 // LOCAL STORAGE
 function storeCounter(value){
-    sessionStorage.setItem("counter", value);
+    localStorage.setItem("counter", value);
 }
 
 // get counter function
 function getCounter(){
-    return sessionStorage.getItem("counter")?
-    sessionStorage.getItem("counter") : 0;
+    return localStorage.getItem("counter")?
+    localStorage.getItem("counter") : 0;
 }
 
 // login function
 function loginFunction(){
+    checkPasswordStrong();
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
 
@@ -123,16 +124,77 @@ function loginFunction(){
     } else{
         if(user == "admin"  && pass == "technology"){
         alert("Login Successfull");
-        window.location.href = "dashboard.html";
 }else{
     alert("Invalid Username or Password Please try again");
 }
 storeCounter++;
-storeCounter = sessionStorage.setItem("counter", storeCounter);
+storeCounter = localStorage.setItem("counter", storeCounter);
 
 
 }} 
 
+
+// 
+
+function ifElseIfExercise(){
+            //input
+            const input = document.getElementById("input-one").value;
+            let output = "";
+            // 10 
+            // process
+            if(input % 3 ==0 && input % 5== 0){
+                 output = "FizzBuzz";
+
+            }else if(input %  3 == 0){
+                output = "Fizz";
+
+            }else if(input % 5 ==0){
+                output="Buzz"
+            }else{
+                output = input;
+            }
+            document.getElementById("display").innerHTML=output;
+            }
+
+            // expression
+            function checkPasswordStrong(){
+                // input
+                const password= document.getElementById("input-one").value;
+
+                // process
+                if(password.includes(" ")){
+                    // checking space
+                    document.getElementById("display-box").innerHTML= "Invalid password";
+                    return "Invalid password";
+                }
+
+                const hasUppercase = /[A-Z]/.test(password);
+                const hasLowercase = /[a-z]/.test(password);
+                const hasNumber = /\d/.test(password);
+                const hasSpecialChar = /[!@#$%^&*()_+\-=\[\]]/.test(password);
+
+                // input
+                let output= "";
+                // process
+                if(
+                    password.length >= 12 && 
+                    hasUppercase && 
+                    hasLowercase && 
+                    hasNumber && 
+                    hasSpecialChar
+                ){
+                    output = "Strong Password" ; //meets all conditoins for  strong password
+                }else if(password.length >= 8 && (hasNumber || hasSpecialChar)){
+                    output = "Moderate"; //meets all conditoins for a moderate password
+                }else if(password.length <8){
+                    output = "Week"; //password too short
+                }else{
+                    output = "'week"; //pasword should not contain spaces
+                }
+
+                alert(output);
+            }
+  
     </script>
 </head>
 <body>
@@ -148,6 +210,9 @@ storeCounter = sessionStorage.setItem("counter", storeCounter);
 <!-- button -->
             <button type="button" id="submitBtn" onclick="loginFunction()">Login</button>
         </form>
+        <input id="input-one">
+        <button onclick="ifElseIfExercise()">Click me</button>
+        <p  id="display"></p>
         
     </div>
 
